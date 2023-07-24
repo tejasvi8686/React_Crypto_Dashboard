@@ -13,12 +13,18 @@ import {
 } from "@chakra-ui/react";
 import { FaBars, FaUserTie } from "react-icons/fa";
 
-const TopNav = () => {
+const TopNav = ({title,onOpen}) => {
   return (
    
     <Box>
-    <HStack maxW="80rem"  h="16" justify="space-between" px="32" mx="auto">
-    <Heading fontWeight="medium" fontSize="28px">Dashboard</Heading>
+    <HStack maxW="70rem"  h="16" justify="space-between"  mx="auto">
+
+    <Icon as={FaBars} onClick={onOpen} display={{
+      base:"block",
+      lg:"none"
+
+    }}/>
+    <Heading  px="4" fontWeight="medium" fontSize="28px">{title}</Heading>
 
     <Menu>
       <MenuButton>
