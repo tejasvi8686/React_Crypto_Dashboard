@@ -4,4 +4,14 @@ export const theme = extendTheme({
         heading: `ubuntu`,
         body:  `ubuntu`,
       },
+
+      styles: {
+        global: {
+
+          body:{
+            bg:"#F3F3F7",
+    
+          },
+        }
+      }
 });
