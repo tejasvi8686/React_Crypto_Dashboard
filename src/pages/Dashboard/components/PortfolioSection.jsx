@@ -39,8 +39,8 @@ const PortfolioSection = () => {
           xl: "row",
         }}
       >
-        <Stack >
-          <HStack color="black.80">
+        <Stack>
+          <HStack color="black.80" >
             <Text fontSize="sm">Total Portfolio Value</Text>
             <Icon as={AiOutlineInfoCircle} />
           </HStack>
@@ -64,8 +64,8 @@ const PortfolioSection = () => {
               sm: "row",
             }}
           >
-            <HStack>
-              <Text textStyle="h2" fontWeight="medium">
+            <HStack >
+              <Text  textStyle="h2" fontWeight="medium">
                 22.39401000
               </Text>{" "}
               <Tag colorScheme="gray" fontWeight="medium">

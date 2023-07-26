@@ -101,7 +101,7 @@ export const theme = extendTheme(
           bg: "#F3F3F7",
         },
       },
-    }, 
+    },
 
     components: {
       Button: {
