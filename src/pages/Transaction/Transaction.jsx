@@ -1,9 +1,96 @@
-import React from 'react'
+import {
+  Card,
+  Flex,
+  Button,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Tag,
+  Icon,
+  HStack,
+  InputGroup,
+  InputLeftElement,
+  Input,
+} from "@chakra-ui/react";
+import DashboardLayout from "../../components/DashboardLayout";
+import { AiOutlineDownload } from "react-icons/ai";
+import TranasactionTable from "./Components/TranasactionTable";
+import { BsSearch } from "react-icons/bs";
 
-const Transaction = () => {
+const TransactionPage = () => {
+  const tabs = [
+    {
+      name: "All",
+      count: 349,
+    },
+    {
+      name: "Deposit",
+      count: 114,
+    },
+    {
+      name: "Widthdraw",
+      count: 55,
+    },
+    {
+      name: "Trade",
+      count: 50,
+    },
+  ];
   return (
-    <div>Transaction</div>
-  )
-}
+    <DashboardLayout title="Transactions">
+      <Flex justify="end" mt="6" mb="3">
+        <Button leftIcon={<Icon as={AiOutlineDownload} />}>Export CSV</Button>
+      </Flex>
+      <Card borderRadius="1rem">
+        <Tabs>
+          <TabList
+            pt="4"
+            display="flex"
+            w="full"
+            justifyContent="space-between"
+          >
+            <HStack>
+              {tabs.map((tab) => (
+                <Tab key={tab.name} display="flex" gap="2" pb="4">
+                  {tab.name}{" "}
+                  <Tag colorScheme="gray" borderRadius="full">
+                    {tab.count}
+                  </Tag>
+                </Tab>
+              ))}
+            </HStack>
 
-export default Transaction
+            <InputGroup maxW="200px" pr="6">
+              <InputLeftElement pointerEvents="none">
+                <Icon as={BsSearch} />
+              </InputLeftElement>
+              <Input type="tel" placeholder="Search..." />
+            </InputGroup>
+          </TabList>
+
+          <TabPanels>
+            <TabPanel>
+            <TranasactionTable />
+            </TabPanel>
+            <TabPanel>
+            <TranasactionTable />
+            </TabPanel>
+            <TabPanel>
+              <TranasactionTable />
+            </TabPanel>
+            <TabPanel>
+            <TranasactionTable />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </Card>
+    </DashboardLayout>
+  );
+};
+
+export default TransactionPage;
+
+
+

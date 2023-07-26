@@ -1,12 +1,29 @@
-import React from 'react'
-import Dashboard from './pages/Dashboard/Dashboard'
+import Dashboard from "./pages/Dashboard/Dashboard";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const App = () => {
+import Support from "./pages/Support/Support";
+import TransactionPage from "./pages/Transaction/Transaction";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/transactions",
+    element: <TransactionPage />,
+  },
+  {
+    path: "/support",
+    element: <Support />,
+  },
+]);
+
+function App() {
   return (
-    <div>
-    <Dashboard/>
-    </div>
-  )
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
-export default App
+export default App;
